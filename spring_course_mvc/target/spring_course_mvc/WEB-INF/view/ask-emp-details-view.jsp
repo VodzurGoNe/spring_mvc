@@ -39,8 +39,11 @@
        FR <form:checkbox path="languages" value="French"/>      --%>
     <form:checkboxes path="languages" items="${employee.languageMap}"/>
     <br><br>
-    Phone Number <form:input path="phoneNumber"/>
+    Phone number <form:input path="phoneNumber"/>
     <form:errors path="phoneNumber"/>
+    <br><br>
+    Email <form:input path="email"/>
+    <form:errors path="email"/>
 
     <br><br>
     <input type="submit" value="OK">

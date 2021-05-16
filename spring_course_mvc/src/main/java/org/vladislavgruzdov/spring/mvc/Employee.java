@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.vladislavgruzdov.spring.mvc.validation.CheckEmail;
 
 import javax.validation.constraints.*;
 import java.util.HashMap;
@@ -35,6 +36,8 @@ public class Employee {
     @ToString.Exclude
     @Pattern(regexp = "\\d{3}-\\d{3}-\\d{2}-\\d{2}", message = "please use pattern XXX-XXX-XX-XX")
     private String phoneNumber;
+    @CheckEmail(value = "random.com", message = "email must ends with \"random.com\"")
+    private String email;
 
     {
         departments = new HashMap<>();
