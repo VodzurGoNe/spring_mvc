@@ -23,6 +23,10 @@ public class Employee {
     private String carBrand;
     @ToString.Exclude
     private Map<String, String> carBrands;
+    @ToString.Exclude
+    private String[] languages;
+    @ToString.Exclude
+    private Map<String, String> languageMap;
 
     {
         departments = new HashMap<>();
@@ -34,5 +38,10 @@ public class Employee {
         carBrands.put("Lada", "LADA");
         carBrands.put("Audi", "AUDI");
         carBrands.put("BMW", "BMW");
+
+        languageMap = new HashMap<>();
+        languageMap.put("English", "EN");
+        languageMap.put("Deutch", "DE");
+        languageMap.put("French", "FR");
     }
 }
