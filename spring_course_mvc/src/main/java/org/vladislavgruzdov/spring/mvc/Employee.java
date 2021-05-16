@@ -5,8 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,6 +18,8 @@ public class Employee {
     private String name;
     @NotBlank(message = "surname is required field")
     private String surname;
+    @Min(value = 500, message = "must be greater than 499")
+    @Max(value = 1000, message = "must be less than 1001")
     private Integer salary;
     private String department;
     @ToString.Exclude
@@ -31,6 +32,9 @@ public class Employee {
     private String[] languages;
     @ToString.Exclude
     private Map<String, String> languageMap;
+    @ToString.Exclude
+    @Pattern(regexp = "\\d{3}-\\d{3}-\\d{2}-\\d{2}", message = "please use pattern XXX-XXX-XX-XX")
+    private String phoneNumber;
 
     {
         departments = new HashMap<>();
